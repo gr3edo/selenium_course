@@ -32,7 +32,7 @@ def test_example(driver):
             sub_menu_counter += 1
             driver.find_element_by_xpath('.//*[@id="app-"]//li[' + str(sub_menu_counter) + ']').click()
             wait = WebDriverWait(driver, 10)
-            element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#content h1')))
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#content h1')))
 
 def are_elements_present(driver, *args):
     return len(driver.find_elements(*args)) > 0

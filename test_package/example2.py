@@ -24,5 +24,5 @@ def test_example(driver):
 
     for counter in sidebar_item:
         counter.find_element_by_tag_name("a").click()
-        driver.implicitly_wait(3)
+
 
