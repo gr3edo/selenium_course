@@ -22,9 +22,22 @@ def test_example(driver):
     country = get_array_of_countries(driver)
     sorted_country = sorted(country)
 
-    assert country == sorted_country
+    assert (country == sorted_country)
 
-    #develop timezones check
+    # develop timezones check
+
+    countries = driver.find_elements_by_xpath(".//*[@id='content']/form/table/tbody/tr[@class='row']")
+    counter = 1
+    for i in countries:
+        counter += 1
+        tz = driver.find_element_by_xpath(".//*[@id='content']/form/table/tbody/tr["+ str(counter) +"]/td[6]")
+        tz = tz.text
+        if int(tz) > 0:
+            driver.find_element_by_xpath(".//*[@id='content']/form/table/tbody/tr[" + str(counter) + "]/td[7]/a").click()
+
+
+
+
 
 def get_array_of_countries(driver):
     item = driver.find_elements_by_xpath(".//*[@id='content']/form/table/tbody//td[5]/a")

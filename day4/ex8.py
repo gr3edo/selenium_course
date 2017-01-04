@@ -15,7 +15,6 @@ def test_example(driver):
 
     items = driver.find_elements_by_css_selector(".image-wrapper div")
 
-    items_counter = 0
     for item in items:
         is_element_present(driver, By.CSS_SELECTOR, ".image-wrapper div")
 
