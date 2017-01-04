@@ -34,10 +34,15 @@ def test_example(driver):
         tz = tz.text
         if int(tz) > 0:
             driver.find_element_by_xpath(".//*[@id='content']/form/table/tbody/tr[" + str(counter) + "]/td[7]/a").click()
-
-
-
-
+            tz_countries = driver.find_elements_by_xpath(".//*[@id='table-zones']/tbody/tr/td[3]/input")
+            tz_countries_array = []
+            for element in tz_countries:
+                tz_countries_array.append(element.get_attribute("value"))
+            tz_countries_array.pop()
+            sorted_tz_countries = sorted(tz_countries_array)
+            assert (tz_countries_array == sorted_tz_countries)
+            print(sorted_tz_countries)
+            driver.find_element_by_name("cancel").click()
 
 def get_array_of_countries(driver):
     item = driver.find_elements_by_xpath(".//*[@id='content']/form/table/tbody//td[5]/a")
