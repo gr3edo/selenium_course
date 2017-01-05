@@ -11,7 +11,7 @@ def driver(request):
 def test_example(driver):
     driver.get("http://localhost/litecart")
     driver.find_element_by_xpath(".//*[@id='box-account-login']//tr[5]//a").click()
-    text_temp = "11113"
+    text_temp = "11114"
     email_temp = text_temp + "@a.a"
     pswd_temp = "qweqwe"
 
