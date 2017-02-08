@@ -9,7 +9,7 @@ def driver(request):
     print(wd.capabilities)
     request.addfinalizer(wd.quit)
     return wd
-
+#123
 def test_example(driver):
     text_temp = "lorem ipsum 1"
     code_temp = "code01"
