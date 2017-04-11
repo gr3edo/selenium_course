@@ -10,6 +10,8 @@ def driver(request):
     request.addfinalizer(wd.quit)
     return wd
 
+#commit1
+
 def test_example(driver):
     text_temp = "lorem ipsum 1"
     code_temp = "code01"
