@@ -10,12 +10,10 @@ def driver(request):
     request.addfinalizer(wd.quit)
     return wd
 
-#commit1
-
 def test_example(driver):
     text_temp = "lorem ipsum 1"
     code_temp = "code01"
-
+# new commit
     driver.get("http://localhost/litecart/admin/")
     driver.find_element_by_name("username").send_keys("admin")
     driver.find_element_by_name("password").send_keys("admin")
